@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONFINE (cloud)</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #BEC8D1;
+        }
+        canvas {
+            border-radius: 20px; /* Adjust the radius as needed */
+            border: 5px solid #989EA1; /* Adjust the border size and color as needed */
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="1600" height="900"></canvas>
+    <script>
+        // Get the canvas element and its context
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Create a new image object
+        const img = new Image();
+        img.src = 'block.png'; // Replace with the path to your image
+
+        // Draw the image on the canvas once it has loaded
+        img.onload = function() {
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        };
+    </script>
+</body>
+</html>
